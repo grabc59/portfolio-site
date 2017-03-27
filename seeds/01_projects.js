@@ -4,7 +4,7 @@ exports.seed = function(knex, Promise) {
   return knex('projects').del()
     .then(function () {
       // Inserts seed entries
-      // 'id', 'title', 'description', 'image', 'deployment_link', 'video_link', 'repo_link'
+      // 'id', 'title', 'description', 'technologies', 'image', 'deployment_link', 'video_link', 'repo_link'
       return knex('projects').insert([
         {
           id: 1, 
