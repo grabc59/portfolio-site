@@ -11,14 +11,14 @@
 
     $stateProvider
     .state({
-      name: 'adsList',
+      name: 'projectsList',
       url: '/',
-      component: 'adsList',
+      component: 'projectsList',
     })
     .state({
-      name: 'editAd',
-      url: '/ad/:id/edit',
-      component: 'editAd',
+      name: 'editProject',
+      url: '/project/:id/edit',
+      component: 'editProject',
     })
   }
 }());
