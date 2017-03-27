@@ -10,7 +10,7 @@ if (process.env.NODE_ENV !== 'test') {
   app.use(logger('dev'))
 }
 
-const messages = require('./routes/classifieds');
+const messages = require('./routes/projects.js');
 
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')))
