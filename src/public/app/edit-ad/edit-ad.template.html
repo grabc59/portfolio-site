@@ -1,0 +1,30 @@
+<nav>
+  <div class="nav-wrapper cg-nav">
+    <a href="#!" class="brand-logo"><h1>Galvanize Classifieds</h1></a>
+  </div>
+</nav>
+<div class="container">
+<form  name="$ctrl.adForm" novalidate ng-submit="$ctrl.submitAd($ctrl.ad)" >
+    <div>
+        <label for="title">Title</label>
+        <input id="title" name="title" class="form-control" required ng-model="$ctrl.ad.title" ng-class="{'has-error': $ctrl.ad.title.$invalid && $ctrl.ad.title.$touched}">
+    </div>
+    <div>
+        <label for="description">Description</label>
+        <textarea id="description" name="description" class="form-control" required ng-model="$ctrl.ad.description" ng-class="{'has-error': $ctrl.adForm.body.$invalid && $ctrl.adForm.body.$touched}"></textarea>
+    </div>
+    <div>
+        <label for="price">Price</label>
+        <input id="price" name="price" class="form-control" required ng-model="$ctrl.ad.price" ng-class="{'has-error': $ctrl.adForm.price.$invalid && $ctrl.adForm.price.$touched}">
+    </div>
+    <div>
+        <label for="item_image">Image URL</label>
+        <input id="item_image" name="item_image" class="form-control" required ng-model="$ctrl.ad.item_image" ng-class="{'has-error': $ctrl.adForm.item_image.$invalid && $ctrl.adForm.item_image.$touched}">
+    </div>
+    <div class="form-group">
+        <button ng-submit="$ctrl.patchAd()" type="submit" class="btn btn-primary" ng-disabled="$ctrl.adForm.$invalid">
+        Submit
+        </button>
+    </div>
+</form>
+</div>
