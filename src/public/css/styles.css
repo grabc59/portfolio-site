@@ -1,0 +1,15 @@
+.cg-nav {
+    background-color: rgb(247, 144, 30);
+    padding-left:30px !important;
+    padding-right:30px !important;
+}
+.cg-search {
+    color: black;
+}
+
+.cg-btn {
+    background-color: rgb(247, 144, 30);
+}
+.cg-cards-container {
+  text-align: center;
+}
