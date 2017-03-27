@@ -11,7 +11,7 @@ const router = express.Router();
 ////////////////////////
 router.get('/', function(req, res, next) {
   knex('projects')
-  .select('id', 'title', 'description', 'image', 'deployment_link', 'video_link', 'repo_link')
+  .select('id', 'title', 'description', 'technologies', 'image', 'deployment_link', 'video_link', 'repo_link')
   .orderBy('id')
   .then((result) => {
     res.send(result);
@@ -26,7 +26,7 @@ router.get('/', function(req, res, next) {
 ////////////////////////////////
 router.get('/:id', function(req, res, next) {
   knex('projects')
-    .select('id', 'title', 'description', 'image', 'deployment_link', 'video_link', 'repo_link')
+    .select('id', 'title', 'description', 'technologies', 'image', 'deployment_link', 'video_link', 'repo_link')
     .where({id: req.params.id})
     .first()
     .then((result) => {
@@ -93,7 +93,7 @@ router.patch('/:id', function(req, res, next) {
 router.delete('/:id', function(req, res, next) {
     let message;
     knex('classifieds')
-        .select('id', 'title', 'description', 'image', 'deployment_link', 'video_link', 'repo_link')
+        .select('id', 'title', 'description', 'technologies', 'image', 'deployment_link', 'video_link', 'repo_link')
         .where({
             id: req.params.id
         })
