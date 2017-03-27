@@ -62,7 +62,7 @@ router.post('/', function(req, res, next) {
 })
 
 ////////////////////////
-//////// PATCH
+//////// UPDATE A PROJECT
 ////////////////////////
 router.patch('/:id', function(req, res, next) {
   knex('projects')
@@ -88,7 +88,7 @@ router.patch('/:id', function(req, res, next) {
 });
 
 ////////////////////////
-//////// DELETE
+//////// DELETE A PROJECT
 ////////////////////////
 router.delete('/:id', function(req, res, next) {
     let message;
