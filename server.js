@@ -13,7 +13,7 @@ if (process.env.NODE_ENV !== 'test') {
 const messages = require('./routes/classifieds');
 
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, 'src/public')))
+app.use(express.static(path.join(__dirname, 'public')))
 app.use('/classifieds', messages);
 
 app.use('*', function(req, res, next) {
