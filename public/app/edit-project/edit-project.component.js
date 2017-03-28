@@ -77,12 +77,6 @@
         */
         (() => {
             document.getElementById('file-input').onchange = initUpload;
-
-            // if (vm.project.image) {
-            //   document.getElementById('preview').src = vm.projec.image;
-            // } else {
-            //   document.getElementById('preview').src = "/images/default.png";
-            // }
         })();
 
       }

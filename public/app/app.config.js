@@ -20,5 +20,6 @@
       url: '/project/:id/edit',
       component: 'editProject',
     })
+
   }
 }());

@@ -1,3 +1,7 @@
+
+a {
+  color: white;
+}
 .cg-nav {
     background-color: rgb(247, 144, 30);
     padding-left:30px !important;
@@ -8,7 +12,7 @@
 }
 
 .cg-btn {
-    background-color: rgb(247, 144, 30);
+    background-color:#0046A8;
 }
 .cg-cards-container {
   text-align: center;
