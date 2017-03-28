@@ -15,7 +15,7 @@ const sign_s3 = require('./routes/sign-s3.js');
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')))
 app.use('/projects', projects);
-app.use('sign-s3', sign_s3);
+app.use('/sign-s3', sign_s3);
 
 app.use('*', function(req, res, next) {
   res.sendFile('index.html', {root: path.join(__dirname, 'public')})

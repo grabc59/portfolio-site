@@ -19,6 +19,8 @@
         </div>
         <div>
             <label for="image">Image</label>
+            <input type="file" id="file-input">
+            <img style="border:1px solid gray;width:300px;"  id="preview">
             <input id="image" name="image" class="form-control" ng-model="$ctrl.project.image" ng-class="{'has-error': $ctrl.projectForm.image.$invalid && $ctrl.projectForm.image.$touched}">
         </div>
         <div>
