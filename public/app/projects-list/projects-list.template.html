@@ -1,9 +1,3 @@
-<!--<nav>
-  <div class="nav-wrapper cg-nav">
-    <a href="#!" class="brand-logo"><h1>Chris's Projects</h1></a>
-
-  </div>
-</nav>-->
 <jumbotron></jumbotron>
 <div class="container">
 <div class="row">
@@ -55,9 +49,9 @@
 
 
 <div class="row cards-container cg-cards-container" >
-
     <div class="" ng-repeat="project in $ctrl.projects | filter : $ctrl.searchText | orderBy : $ctrl.sortCategory : true" id={{$index}}>
         <div class="card" >
+            <!--id', 'title', 'description', 'technologies', 'image', 'deployment_link', 'video_link', 'repo_link'-->
             <div class="card-image" >
                 <img ng-src={{project.image}} alt="item image">
                 <a ui-sref="editProject({id:project.id})" style="right:70px;" class="btn-floating halfway-fab waves-effect waves-light rgb(38,166,154)"><i class="material-icons">mode_edit</i></a>
@@ -66,6 +60,15 @@
             <div class="card-content">
                 <h4 ><b>{{project.title}}</b></h4>
                 <b>Description: </b><p class="card-text">{{project.description}}</p>
+                <b>Technologies: </b><p class="card-text">{{project.technologies}}</p>
+                <!--<b>Public Link: </b><p class="card-text">{{project.deployment_link}}</p>-->
+                <a href={{project.deployment_link}} style="right:70px;" class="btn-floating halfway-fab waves-effect waves-light rgb(38,166,154)"><i class="material-icons">language</i></a>
+                <!--<b>Demo: </b><p class="card-text">{{project.video_link}}</p>-->
+                <a href={{project.video_link}} class="btn-floating halfway-fab waves-effect waves-light rgb(38,166,154)" ><i class="material-icons">ondemand_video</i></a>
+                <!--<b>Github: </b><p class="card-text">{{project.repo_link}}</p>-->
+                <a href={{project.repo_link}} class="btn-floating halfway-fab waves-effect waves-light rgb(38,166,154)">
+                <i class="material-icons">code</i></a>
+
             </div>
         </div>
     </div>
