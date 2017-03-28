@@ -3,6 +3,8 @@
 const express = require('express');
 const router = express.Router();
 const aws = require('aws-sdk');
+require('dotenv').config();
+const S3_BUCKET = process.env.S3_BUCKET;
 
 router.get('/', (req, res) => {
   const s3 = new aws.S3();

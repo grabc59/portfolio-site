@@ -3,9 +3,7 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const path = require('path')
-const S3_BUCKET = process.env.S3_BUCKET;
-require('dotenv').config();
+const path = require('path');
 
 if (process.env.NODE_ENV !== 'test') {
   const logger = require('morgan')
