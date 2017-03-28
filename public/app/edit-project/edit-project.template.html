@@ -1,30 +1,42 @@
 <nav>
   <div class="nav-wrapper cg-nav">
-    <a href="#!" class="brand-logo"><h1>Galvanize Classifieds</h1></a>
+    <a href="/" class="brand-logo"><h1>Chris's Projects</h1></a>
   </div>
 </nav>
 <div class="container">
-<form  name="$ctrl.adForm" novalidate ng-submit="$ctrl.submitAd($ctrl.ad)" >
-    <div>
-        <label for="title">Title</label>
-        <input id="title" name="title" class="form-control" required ng-model="$ctrl.ad.title" ng-class="{'has-error': $ctrl.ad.title.$invalid && $ctrl.ad.title.$touched}">
-    </div>
-    <div>
-        <label for="description">Description</label>
-        <textarea id="description" name="description" class="form-control" required ng-model="$ctrl.ad.description" ng-class="{'has-error': $ctrl.adForm.body.$invalid && $ctrl.adForm.body.$touched}"></textarea>
-    </div>
-    <div>
-        <label for="price">Price</label>
-        <input id="price" name="price" class="form-control" required ng-model="$ctrl.ad.price" ng-class="{'has-error': $ctrl.adForm.price.$invalid && $ctrl.adForm.price.$touched}">
-    </div>
-    <div>
-        <label for="item_image">Image URL</label>
-        <input id="item_image" name="item_image" class="form-control" required ng-model="$ctrl.ad.item_image" ng-class="{'has-error': $ctrl.adForm.item_image.$invalid && $ctrl.adForm.item_image.$touched}">
-    </div>
-    <div class="form-group">
-        <button ng-submit="$ctrl.patchAd()" type="submit" class="btn btn-primary" ng-disabled="$ctrl.adForm.$invalid">
-        Submit
-        </button>
-    </div>
-</form>
+    <form  name="$ctrl.projectForm" novalidate ng-submit="$ctrl.submitProject($ctrl.project)" >
+        <div>
+            <label for="title">Title</label>
+            <input id="title" name="title" class="form-control" required ng-model="$ctrl.project.title" ng-class="{'has-error': $ctrl.project.title.$invalid && $ctrl.project.title.$touched}">
+        </div>
+        <div>
+            <label for="description">Description</label>
+            <textarea id="description" name="description" class="form-control" required ng-model="$ctrl.project.description" ng-class="{'has-error': $ctrl.projectForm.body.$invalid && $ctrl.projectForm.body.$touched}"></textarea>
+        </div>
+        <div>
+            <label for="price">Technologies</label>
+            <input id="technologies" name="technologies" class="form-control" required ng-model="$ctrl.project.technologies" ng-class="{'has-error': $ctrl.projectForm.technologies.$invalid && $ctrl.projectForm.technologies.$touched}">
+        </div>
+        <div>
+            <label for="image">Image</label>
+            <input id="image" name="image" class="form-control" ng-model="$ctrl.project.image" ng-class="{'has-error': $ctrl.projectForm.image.$invalid && $ctrl.projectForm.image.$touched}">
+        </div>
+        <div>
+            <label for="deployment_link">Public Link</label>
+            <input id="deployment_link" name="deployment_link" class="form-control" ng-model="$ctrl.project.deployment_link" ng-class="{'has-error': $ctrl.projectForm.deployment_link.$invalid && $ctrl.projectForm.deployment_link.$touched}">
+        </div>
+        <div>
+            <label for="video_link">Video</label>
+            <input id="video_link" name="video_link" class="form-control" ng-model="$ctrl.project.video_link" ng-class="{'has-error': $ctrl.projectForm.video_link.$invalid && $ctrl.projectForm.video_link.$touched}">
+        </div>
+        <div>
+            <label for="repo_link">Repo</label>
+            <input id="repo_link" name="repo_link" class="form-control" ng-model="$ctrl.project.repo_link" ng-class="{'has-error': $ctrl.projectForm.repo_link.$invalid && $ctrl.projectForm.repo_link.$touched}">
+        </div>
+        <div class="form-group">
+            <button ng-submit="$ctrl.patchProject()" type="submit" class="btn btn-primary" ng-disabled="$ctrl.projectForm.$invalid">
+            Submit
+            </button>
+        </div>
+    </form>
 </div>
