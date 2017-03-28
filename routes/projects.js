@@ -45,7 +45,7 @@ router.post('/', function(req, res, next) {
     .insert({
       title: req.body.title,
       description: req.body.description,
-      image: req.body.price,
+      image: req.body.image,
       deployment_link: req.body.deployment_link,
       video_link: req.body.video_link,
       repo_link: req.body.repo_link
@@ -65,13 +65,14 @@ router.post('/', function(req, res, next) {
 //////// UPDATE A PROJECT
 ////////////////////////
 router.patch('/:id', function(req, res, next) {
+  console.log(req.body);
   knex('projects')
     .where({id: req.params.id})
     .first()
     .update({
       title: req.body.title,
       description: req.body.description,
-      image: req.body.price,
+      image: req.body.image,
       deployment_link: req.body.deployment_link,
       video_link: req.body.video_link,
       repo_link: req.body.repo_link

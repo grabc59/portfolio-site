@@ -15,21 +15,21 @@
         this.deleteProject = deleteProject;
 
         function getProjects() {
-            return $http.get('/classifieds/')
+            return $http.get('/projects/')
                 .then(function(response) {
                     return response.data;
                 });
         }
 
         function getSpecificProject(projectId) {
-            return $http.get('/classifieds/' + projectId)
+            return $http.get('/projects/' + projectId)
                 .then(function(response) {
                     return response;
                 });
         }
 
         function submitProject(newProject) {
-            return $http.post('/classifieds/', newProject)
+            return $http.post('/projects/', newProject)
                 .then(function(response) {
                     console.log(response)
                     return response.data;
@@ -37,14 +37,16 @@
         }
 
       function patchProject(editProject) {
-        return $http.patch('/classifieds/' + editProject.id, editProject)
+          console.log(editProject);
+        return $http.patch('/projects/' + editProject.id, editProject)
           .then(function(response) {
+              console.log(response);
             return response;
           });
       }
 
       function deleteProject(projectId) {
-        return $http.delete('/classifieds/' + projectId)
+        return $http.delete('/projects/' + projectId)
           .then(function(response) {
             return response;
           });

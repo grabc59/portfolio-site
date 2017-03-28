@@ -26,6 +26,7 @@
       }
 
       vm.submitProject = function(project) {
+        console.log(project);
         projectsListService.patchProject(project)
             .then(function(response) {
                 delete vm.editPost;

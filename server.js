@@ -4,17 +4,20 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const path = require('path')
+const S3_BUCKET = process.env.S3_BUCKET;
+require('dotenv').config();
 
 if (process.env.NODE_ENV !== 'test') {
   const logger = require('morgan')
   app.use(logger('dev'))
 }
-
-const messages = require('./routes/projects.js');
+const projects = require('./routes/projects.js');
+const sign_s3 = require('./routes/sign-s3.js');
 
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')))
-app.use('/classifieds', messages);
+app.use('/projects', projects);
+app.use('sign-s3', sign_s3);
 
 app.use('*', function(req, res, next) {
   res.sendFile('index.html', {root: path.join(__dirname, 'public')})
