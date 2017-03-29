@@ -52,21 +52,12 @@
         <div class="" ng-repeat="project in $ctrl.projects | filter : $ctrl.searchText | orderBy : $ctrl.sortCategory : false" id={{$index}}>
             <div class="card" >
                 <div class="card-image" >
-                    <img ng-src={{project.image}} alt="item image">
+                    <a href={{project.deployment_link}}>
+                        <img ng-src={{project.image}} class="cg-project-card-image" alt="item image">
+                    </a>
 
                     <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-                        <a ui-sref="editProject({id:project.id})">
-                            <md-button class="cg-project-btn" aria-label="Edit">
-                                <i class="material-icons">mode_edit</i>
-                            </md-button>
-                        </a>
-
-                        <a ng-click="$ctrl.deleteProject(project.id)">    
-                            <md-button class="cg-project-btn" aria-label="delete">
-                                <i class="material-icons">delete</i>
-                            </md-button>
-                        </a>
-
+                       
                         <a href={{project.deployment_link}}>
                             <md-button class="cg-project-btn" aria-label="Deployment Link">
                                 <i class="material-icons">language</i>
@@ -84,9 +75,23 @@
                                 <i class="material-icons">code</i>                            
                             </md-button>
                         </a>
+                        
+                         <a ui-sref="editProject({id:project.id})">
+                            <md-button class="cg-project-btn" aria-label="Edit">
+                                <i class="material-icons">mode_edit</i>
+                            </md-button>
+                        </a>
+
+                        <a ng-click="$ctrl.deleteProject(project.id)">    
+                            <md-button class="cg-project-btn" aria-label="delete">
+                                <i class="material-icons">delete</i>
+                            </md-button>
+                        </a>
+                    </section>
 
                 </div>
                 <div class="card-content">
+
                     <h4 ><b>{{project.title}}</b></h4>
                     <b>Description: </b><p class="card-text">{{project.description}}</p>
                     <b>Technologies: </b><p class="card-text">{{project.technologies}}</p>
