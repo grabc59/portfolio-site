@@ -23,23 +23,20 @@ a {
 .card-image img:hover {
     opacity:0.8; 
 }
-
-
-
 .jumbotron {
   color: white;
   background:  linear-gradient(130deg, #0AABC4, #0046A8);
-  display: flex;
-  flex-direction: row;
 }
 .jumbotron .cg-jumbotron-titles {
   padding: 50px;
-  flex-grow:50;
-  
 }
 .jumbotron .cg-jumbotron-headshot {
   border-radius: 50%;
   height: 80%;
+}
+.cg-jumbotron-titles {
+    display: flex;
+    justify-content: space-between;
 }
 
 
