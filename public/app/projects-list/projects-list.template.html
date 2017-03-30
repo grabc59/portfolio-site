@@ -1,53 +1,15 @@
 <jumbotron></jumbotron>
+
 <div class="container">
     <div class="row">
         <div class="col m4">
-            <md-input-container id="sortDropdown"  class="md-block dropdown-button" flex-gt-sm>
-                <md-select ng-model=$ctrl.sortCategory placeholder="Sort By">
-                    <md-option value="created_at">
-                        Date
-                    </md-option>
-                    <md-option value="title">
-                        Title
-                    </md-option>
-                </md-select>
-            </md-input-container>
+        </div>
+        <div class="col m4 s12">
+            <input type="search" class="form-control input-sm search-form cg-search" placeholder="Search" ng-model="$ctrl.searchText">
         </div>
         <div class="col m4">
         </div>
-        <div class="col m4">
-        <input type="search" class="form-control input-sm search-form cg-search" placeholder="Search" ng-model="$ctrl.searchText">
     </div>
-    </div>
-    <div class="row">
-        <a class="btn btn-primary cg-btn" href="#" id="newProjectFormBtn" ng-click="$ctrl.toggleProjectForm($event)" ng-init="vm.toggleProjectFormTracker=false">Add Project</a>
-    </div>
-
-    <form  name="$ctrl.projectForm" ng-if="$ctrl.toggleProjectFormTracker" novalidate ng-submit="$ctrl.submitProject($ctrl.project)">
-        <div>
-            <label for="title">Title</label>
-            <input id="title" name="title" class="form-control" required ng-model="$ctrl.project.title" ng-class="{'invalid': $ctrl.projectForm.title.$invalid && $ctrl.projectForm.title.$touched}">
-        </div>
-        <div>
-            <label for="description">Description</label>
-            <textarea id="description" name="description" class="form-control" required ng-model="$ctrl.project.description" ng-class="{'invalid': $ctrl.projectForm.description.$invalid && $ctrl.projectForm.description.$touched}"></textarea>
-        </div>
-        <div>
-            <label for="price">Price</label>
-            <input id="price" name="price" class="form-control" required ng-model="$ctrl.ad.price" ng-class="{'invalid': $ctrl.projectForm.price.$invalid && $ctrl.projectForm.price.$touched}">
-        </div>
-        <div>
-            <label for="image">Image URL</label>
-            <input id="item_image" name="item_image" class="form-control" required ng-model="$ctrl.project.item_image" ng-class="{'invalid': $ctrl.projectForm.item_image.$invalid && $ctrl.projectForm.item_image.$touched}">
-        </div>
-        <div class="form-group">
-            <button type="submit" class="btn btn-primary" ng-disabled="$ctrl.projectForm.$invalid">
-            Create Project
-            </button>
-        </div>
-    </form>
-
-
     <div class="row cards-container cg-cards-container" >
         <div class="" ng-repeat="project in $ctrl.projects | filter : $ctrl.searchText | orderBy : $ctrl.sortCategory : false" id={{$index}}>
             <div class="card" >

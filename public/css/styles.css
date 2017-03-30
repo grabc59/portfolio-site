@@ -28,17 +28,21 @@ a {
   background:  linear-gradient(130deg, #0AABC4, #0046A8);
 }
 .jumbotron .cg-jumbotron-titles {
-  padding: 50px;
+  padding: 30px;
 }
 .jumbotron .cg-jumbotron-headshot {
   border-radius: 50%;
   height: 80%;
 }
 .cg-jumbotron-titles {
-    display: flex;
-    justify-content: space-between;
+    /*display: flex;
+    justify-content: space-between;*/
 }
-
+@media screen and (min-width: 600px) {
+  .title2 {
+    margin-top:40px;
+  }
+}
 
 
 .cg-project-btn {

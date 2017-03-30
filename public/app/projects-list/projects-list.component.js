@@ -13,7 +13,6 @@
       
       vm.$onInit = function() {
         vm.getProjects();
-        vm.toggleProjectFormTracker = false;
       }
 
       ////////////////////////////////
@@ -26,21 +25,6 @@
           vm.projects = projects;
         });
       };
-
-      vm.toggleProjectForm = function(e) {
-        vm.toggleProjectFormTracker = !vm.toggleProjectFormTracker;
-        console.log(vm.toggleProjectFormTracker);
-      }
-
-      vm.submitProject = function(project) {
-        projectsListService
-        .submitProject(project)
-        .then(function() {
-          vm.toggleProjectFormTracker = false;
-          delete vm.project;
-          vm.getProject();
-        })
-      }
 
       vm.deleteProject = function(projectId) {
         console.log(projectId)
